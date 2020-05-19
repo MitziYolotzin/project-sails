@@ -22,25 +22,34 @@ module.exports.routes = {
 
     '/': { view: 'pages/homepage' },
 
-    'GET /example': function(req, res) {
-        return res.json({ message: 'ok' });
-    },
+    'GET /controller': 'TestController.test'
 
-    'POST /create': function(req, res) {
-        let title = req.body.title;
-        let body = req.body.body;
+    // 'GET /controller': {
+    //     controller: 'Test',
+    //     action: 'test'
+    // }
 
-        return res.json({
-            title: title,
-            body: body
-        });
-    },
-    'DELETE /delete': function(req, res) {
-        return res.json({ message: 'DELETE' });
-    },
-    'PUT /update': function(req, res) {
-        return res.json({ message: 'UPDATED' });
-    }
+
+
+    //    'GET /example': function(req, res) {
+    //        return res.json({ message: 'ok' });
+    //    },
+
+    //    'POST /create': function(req, res) {
+    //       let title = req.body.title;
+    //        let body = req.body.body;
+
+    //       return res.json({
+    //           title: title,
+    //            body: body
+    //       });
+    //   },
+    //    'DELETE /delete': function(req, res) {
+    //       return res.json({ message: 'DELETE' });
+    //   },
+    ///   'PUT /update': function(req, res) {
+    //       return res.json({ message: 'UPDATED' });
+    //   }
 
 
 
