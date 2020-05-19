@@ -28,21 +28,23 @@ module.exports = {
 
     list: function(req, res) {
         //get elements
+        // eslint-disable-next-line camelcase
         let words = global_words; //ORM
 
         //return elements
-        return res.status(200).json(words)
+        return res.status(200).json(words);
     },
 
     show: function(req, res) {
         //get ID /words/12
-        let id = req.params.id
+        let id = req.params.id;
 
         //get element
+        // eslint-disable-next-line camelcase
         let word = global_words.filter(word => parseInt(word.id) === parseInt(id));
 
         if (word) {
-            return res.json(word)
+            return res.json(word);
         } else {
             return res.status(404).json({ error: 'Element not found' });
         }

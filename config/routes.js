@@ -22,6 +22,9 @@ module.exports.routes = {
 
     '/': { view: 'pages/homepage' },
 
+    'GET /items': 'item/list',
+    'GET /items/:id': 'item/show',
+    'POST /items/': 'item/store',
 
     'GET /words': 'WordController.list',
     'GET /words/:id': 'WordController.show',
