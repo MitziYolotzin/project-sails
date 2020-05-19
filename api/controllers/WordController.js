@@ -6,6 +6,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+// eslint-disable-next-line camelcase
 const global_words = [{
         id: 1,
         text: 'hola',
@@ -49,6 +50,24 @@ module.exports = {
         //return 
         //return res
         //not found
+    },
+
+    store: function(req, res) {
+        //get elements, get data of req
+        let word = {
+            //attribute id
+            //get num int, of random number function, get range 1000 numbers for generate id random
+            id: parseInt(Math.random() * 10000),
+            text: req.body.text,
+            length: req.body.text.length
+        };
+        //insert data in persistent system, insert in list
+
+        // eslint-disable-next-line camelcase
+        global_words.push(word); //ORM
+
+        //return obj, with status 201
+        return res.status(201).json(word);
     }
 
 };

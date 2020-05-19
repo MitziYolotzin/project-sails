@@ -24,7 +24,8 @@ module.exports.routes = {
 
 
     'GET /words': 'WordController.list',
-    'GET /words/:id': 'WordController.show'
+    'GET /words/:id': 'WordController.show',
+    'POST /words': 'WordController.store'
 
 
     // 'GET /controller/:id': 'TestController.test'
