@@ -8,6 +8,7 @@
 
 module.exports = {
     test: function(req, res) {
-        return res.json({ message: 'Respuesta controller' });
+        let id = req.params.id;
+        return res.json({ id: id });
     }
 };
