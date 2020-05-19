@@ -22,12 +22,24 @@ module.exports.routes = {
 
     '/': { view: 'pages/homepage' },
 
-    'GET /ejemplo': function(req, res) {
+    'GET /example': function(req, res) {
         return res.json({ message: 'ok' });
     },
 
     'POST /create': function(req, res) {
-        return res.json({ message: 'ok POST' });
+        let title = req.body.title;
+        let body = req.body.body;
+
+        return res.json({
+            title: title,
+            body: body
+        });
+    },
+    'DELETE /delete': function(req, res) {
+        return res.json({ message: 'DELETE' });
+    },
+    'PUT /update': function(req, res) {
+        return res.json({ message: 'UPDATED' });
     }
 
 
